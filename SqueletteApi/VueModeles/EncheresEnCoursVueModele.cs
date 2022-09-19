@@ -15,14 +15,14 @@ namespace SqueletteApi.VueModeles
         private readonly Api _apiServices = new Api();
 
         private ObservableCollection<Enchere> _maListeEncheresEnCoursTypeClassique;
-
+        private Enchere _maEnchere;
         #endregion
 
         #region Constructeurs
 
         public EncheresEnCoursVueModele()
         {
-            this.GetListeEnCheresEnCoursTypeClassique();
+            this.GetEnchereTest("19");
         }
 
         #endregion
@@ -33,6 +33,12 @@ namespace SqueletteApi.VueModeles
             get { return _maListeEncheresEnCoursTypeClassique; }
             set { SetProperty(ref _maListeEncheresEnCoursTypeClassique, value); }
         }
+
+        public Enchere MaEnchere
+        {
+            get { return _maEnchere; }
+            set { SetProperty(ref _maEnchere, value); }
+        }
         #endregion
 
         #region Methodes
@@ -40,6 +46,14 @@ namespace SqueletteApi.VueModeles
         {
             MaListeEncheresEnCoursTypeClassique = await _apiServices.GetAllAsync<Enchere>
                 ("api/getEncheresEnCours", Enchere.CollClasse);
+            Enchere.CollClasse.Clear();
+
+        }
+
+        public async void GetEnchereTest(string param)
+        {
+            MaEnchere = await _apiServices.GetOneAsyncID<Enchere>
+                ("api/getEnchereTest", param);
             Enchere.CollClasse.Clear();
 
         }
