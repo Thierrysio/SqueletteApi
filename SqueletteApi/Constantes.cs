@@ -12,7 +12,7 @@ namespace SqueletteApi
 
         //gestion database
 
-        public const string DatabaseFilename = "Enchere2022.db3";
+        public const string DatabaseFilename = "db1test.db3";
 
         public const SQLite.SQLiteOpenFlags Flags =
             SQLite.SQLiteOpenFlags.ReadWrite |
