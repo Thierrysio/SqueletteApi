@@ -15,10 +15,7 @@ namespace SqueletteApi.Modeles
         #region Attributs
 
         public static List<Vendre> CollClasse = new List<Vendre>();
-        [ForeignKey(typeof(Magasin))]
-        public int MagasinId { get; set; }
-        [ForeignKey(typeof(Ville))]
-        public int VilleId { get; set; }
+       
         #endregion
 
         #region Constructeurs
@@ -31,7 +28,10 @@ namespace SqueletteApi.Modeles
         #endregion
 
         #region Getters/Setters
-
+        [ForeignKey(typeof(Magasin))]
+        public int MagasinId { get; set; }
+        [ForeignKey(typeof(Ville))]
+        public int VilleId { get; set; }
         #endregion
 
         #region Methodes

@@ -14,11 +14,7 @@ namespace SqueletteApi.Modeles
         #region Attributs
 
         public static List<Pays> CollClasse = new List<Pays>();
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public string Nom { get; set; }
-        [OneToMany]
-        public List<Ville> LesVilles { get; set; }
+       
 
 
         #endregion
@@ -33,7 +29,11 @@ namespace SqueletteApi.Modeles
         #endregion
 
         #region Getters/Setters
-
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public string Nom { get; set; }
+        [OneToMany]
+        public List<Ville> LesVilles { get; set; }
         #endregion
 
         #region Methodes

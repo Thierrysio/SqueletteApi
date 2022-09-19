@@ -14,11 +14,7 @@ namespace SqueletteApi.Modeles
         #region Attributs
 
         public static List<Magasin> CollClasse = new List<Magasin>();
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public string Nom { get; set; }
-        [ManyToMany(typeof(Vendre))]
-        public List<Ville> LesVilles { get; set; }
+
         #endregion
 
         #region Constructeurs
@@ -31,7 +27,11 @@ namespace SqueletteApi.Modeles
         #endregion
 
         #region Getters/Setters
-
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public string Nom { get; set; }
+        [ManyToMany(typeof(Vendre))]
+        public List<Ville> LesVilles { get; set; }
         #endregion
 
         #region Methodes
