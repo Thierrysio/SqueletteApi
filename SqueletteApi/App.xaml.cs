@@ -1,4 +1,6 @@
-﻿namespace SqueletteApi;
+﻿using SqueletteApi.Vues;
+
+namespace SqueletteApi;
 
 public partial class App : Application
 {
@@ -6,6 +8,6 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
+		MainPage = new EncheresEnCoursVue();
 	}
 }

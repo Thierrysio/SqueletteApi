@@ -49,13 +49,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Modeles\" />
-	  <Folder Include="VueModeles\" />
-	  <Folder Include="Vues\" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
+	  <MauiXaml Update="Vues\EncheresEnCoursVue.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
