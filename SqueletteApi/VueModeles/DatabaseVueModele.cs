@@ -1,6 +1,7 @@
 ﻿using SqueletteApi.Modeles;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,6 +69,9 @@ namespace SqueletteApi.VueModeles
             var MagasinDB = App.Database.GetItemAvecRelations(leMagasin);
             string nomMagasin = MagasinDB.Result.Nom;
             List<Ville> l = MagasinDB.Result.LesVilles;
+
+            //Recuperation de tous les magasins
+           ObservableCollection<Magasin> MaListe = App.Database.GetItemsAsync<Magasin>();
         }
 
         #endregion

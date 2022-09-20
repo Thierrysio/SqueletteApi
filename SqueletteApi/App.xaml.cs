@@ -10,7 +10,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new DatabaseVue();
+		MainPage = new DessinVue();
 	}
     public static GestionDatabase Database
     {

@@ -35,6 +35,10 @@ namespace SqueletteApi.Modeles
         
         [ForeignKey(typeof(Pays))]
         public int PaysId { get; set; }
+
+        /*[ManyToOne]
+        public Pays Lepays { get; set; }
+        */
         #endregion
 
         #region Methodes

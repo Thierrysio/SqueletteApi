@@ -32,6 +32,7 @@ namespace SqueletteApi.Modeles
         public int MagasinId { get; set; }
         [ForeignKey(typeof(Ville))]
         public int VilleId { get; set; }
+
         #endregion
 
         #region Methodes
