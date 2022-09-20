@@ -1,13 +1,26 @@
-﻿using SqueletteApi.Vues;
+﻿using SqueletteApi.Services;
+using SqueletteApi.Vues;
 
 namespace SqueletteApi;
 
 public partial class App : Application
 {
-	public App()
+    static GestionDatabase database;
+    public App()
 	{
 		InitializeComponent();
 
 		MainPage = new UserVue();
 	}
+    public static GestionDatabase Database
+    {
+        get
+        {
+            if (database == null)
+            {
+                database = new GestionDatabase();
+            }
+            return database;
+        }
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using SQLite;
 using SQLiteNetExtensionsAsync.Extensions;
+using SqueletteApi.Modeles;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,14 +32,33 @@ namespace SqueletteApi.Services
         {
             if (!initialized)
             {
-                /*
-                 * if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Etudiant).Name))
+               
+                 if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Magasin).Name))
                 {
 
-                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Etudiant)).ConfigureAwait(false);
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Magasin)).ConfigureAwait(false);
 
                 }
-*/
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Vendre).Name))
+                {
+
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Vendre)).ConfigureAwait(false);
+
+                }
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Pays).Name))
+                {
+
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Pays)).ConfigureAwait(false);
+
+                }
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Ville).Name))
+                {
+
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Ville)).ConfigureAwait(false);
+
+                }
+
+
 
             }
             initialized = true;
@@ -46,7 +66,7 @@ namespace SqueletteApi.Services
         public Task<int> SaveItemAsync<T>(T item)
         {
 
-            PropertyInfo x = (item.GetType().GetProperty("ID"));
+            PropertyInfo x = (item.GetType().GetProperty("Id"));
             int nbi = Convert.ToInt32(x.GetValue(item));
             if (nbi != 0)
             {
@@ -77,7 +97,7 @@ namespace SqueletteApi.Services
         }
         public Task<T> GetItemAvecRelations<T>(T item) where T : new()
         {
-            PropertyInfo x = (item.GetType().GetProperty("ID"));
+            PropertyInfo x = (item.GetType().GetProperty("Id"));
             int nbi = Convert.ToInt32(x.GetValue(item));
             return Database.GetWithChildrenAsync<T>(nbi);
         }

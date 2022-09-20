@@ -32,6 +32,7 @@ namespace SqueletteApi.Modeles
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Nom { get; set; }
+        
         [OneToMany]
         public List<Ville> LesVilles { get; set; }
         #endregion

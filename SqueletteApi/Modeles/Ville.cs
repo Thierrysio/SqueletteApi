@@ -32,8 +32,9 @@ namespace SqueletteApi.Modeles
         public string Nom { get; set; }
         [ManyToMany(typeof(Vendre))]
         public List<Magasin> LesMagasins { get; set; }
+        
         [ForeignKey(typeof(Pays))]
-        public Pays LePays { get; set; }
+        public int PaysId { get; set; }
         #endregion
 
         #region Methodes
