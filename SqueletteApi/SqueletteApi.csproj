@@ -56,6 +56,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Vues\DatabaseVue.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Vues\EncheresEnCoursVue.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
