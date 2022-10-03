@@ -41,7 +41,7 @@ namespace SqueletteApi.VueModeles
             
             lePays.Id = 0;
             lePays.Nom = "France";
-            lePays.LesVilles = new List<Ville>();
+            //lePays.LesVilles = new List<Ville>();
 
             leMagasin.Id = 0;
             leMagasin.Nom = "Darty";
@@ -50,8 +50,9 @@ namespace SqueletteApi.VueModeles
             laVille.Id = 0;
             laVille.Nom = "Lannion";
             laVille.LesMagasins = new List<Magasin>();
+            laVille.Lepays = lePays;
 
-            lePays.LesVilles.Add(laVille);
+           // lePays.LesVilles.Add(laVille);
             leMagasin.LesVilles.Add(laVille);
             laVille.LesMagasins.Add(leMagasin);
 
@@ -70,8 +71,12 @@ namespace SqueletteApi.VueModeles
             string nomMagasin = MagasinDB.Result.Nom;
             List<Ville> l = MagasinDB.Result.LesVilles;
 
+            // Recuperation du magasin
+            var VilleDB = App.Database.GetItemAvecRelations(laVille);
+            Pays x = VilleDB.Result.Lepays;
+
             //Recuperation de tous les magasins
-           ObservableCollection<Magasin> MaListe = App.Database.GetItemsAsync<Magasin>();
+            ObservableCollection<Magasin> MaListe = App.Database.GetItemsAsync<Magasin>();
         }
 
         #endregion

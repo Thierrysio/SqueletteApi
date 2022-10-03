@@ -50,7 +50,7 @@ namespace SqueletteApi.VueModeles
             Magasin leMagasin = new Magasin();
             Ville laVille = new Ville();
 
-            lePays.LesVilles = new List<Ville>();
+            //lePays.LesVilles = new List<Ville>();
             leMagasin.LesVilles = new List<Ville>();
             laVille.LesMagasins = new List<Magasin>();
             lePays.Id = 0;
@@ -61,7 +61,7 @@ namespace SqueletteApi.VueModeles
             laVille.Nom = "fghjg";
            
 
-            lePays.LesVilles.Add(laVille);
+            //lePays.LesVilles.Add(laVille);
             leMagasin.LesVilles.Add(laVille);
             laVille.LesMagasins.Add(leMagasin);
             await App.Database.SaveItemAsync<Pays>(lePays);

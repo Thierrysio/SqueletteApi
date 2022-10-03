@@ -45,19 +45,19 @@ namespace SqueletteApi.Services
                     await Database.CreateTablesAsync(CreateFlags.None, typeof(Vendre)).ConfigureAwait(false);
 
                 }
-                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Pays).Name))
-                {
-
-                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Pays)).ConfigureAwait(false);
-
-                }
+               
                 if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Ville).Name))
                 {
 
                     await Database.CreateTablesAsync(CreateFlags.None, typeof(Ville)).ConfigureAwait(false);
 
                 }
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Pays).Name))
+                {
 
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Pays)).ConfigureAwait(false);
+
+                }
 
 
             }

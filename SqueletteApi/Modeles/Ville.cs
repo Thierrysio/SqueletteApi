@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿
+using SQLite;
 using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
@@ -36,9 +37,9 @@ namespace SqueletteApi.Modeles
         [ForeignKey(typeof(Pays))]
         public int PaysId { get; set; }
 
-        /*[ManyToOne]
+        [ManyToOne(nameof(PaysId))]
         public Pays Lepays { get; set; }
-        */
+        
         #endregion
 
         #region Methodes
